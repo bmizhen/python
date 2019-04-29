@@ -73,5 +73,5 @@ def try_numbers(num_length):
 
 
 # run the alg for numbers of length 4
-try_numbers(4)
+try_numbers(5)
 
