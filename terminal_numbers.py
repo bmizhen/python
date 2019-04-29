@@ -60,7 +60,8 @@ def try_numbers(num_length):
     for n in number_generator(num_length):
         iterations, diff = terminate(0, n, num_length)
         # make a map of [first difference -> number of iterations]
-        # the first difference is the first recursive call
+        # Allows to see all possible initial differences and 
+        # the number of iterations for them (46 for num_length == 4)
         first_diff_map[make_int(sorted(make_list(diff, num_length)))] = iterations
         print(iterations, "\n")
 
@@ -72,6 +73,6 @@ def try_numbers(num_length):
         print(n[0], list(n[1]))
 
 
-# run the alg for numbers of length 4
-try_numbers(5)
+# run the alg for numbers of length N
+try_numbers(4)
 
