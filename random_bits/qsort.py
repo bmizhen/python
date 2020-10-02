@@ -1,8 +1,9 @@
-from itertools import tee, filterfalse
+from itertools import filterfalse
 
 def partition(p, it):
-    it1, it2 = tee(it)
-    return filter(p, it1), filterfalse(p, it2)
+    l = list(it)
+
+    return filter(p, l), filterfalse(p, l)
 
 
 def chain_iterables(*iterables):
