@@ -13,7 +13,7 @@ def compress(query):
     output: “foo=1,2,3&blah=a,b”
     """
 
-    mmap = multymap2(term.split('=') for term in query.split('&'))
+    mmap = multymap(term.split('=') for term in query.split('&'))
     return '&'.join(f'{k}={",".join(v)}' for k, v in mmap.items())
 
 
