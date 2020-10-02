@@ -10,7 +10,7 @@ def chain_iterables(*iterables):
         yield from it
 
 
-def qsort(items):
+def qsort_iter(items):
     it = iter(items)
 
     try:
@@ -21,15 +21,34 @@ def qsort(items):
     less_than_x, not_less_than_x = partition(lambda y: x > y, it)
 
     return chain_iterables(
-        qsort(less_than_x),
+        qsort_iter(less_than_x),
         [x],
-        qsort(not_less_than_x))
+        qsort_iter(not_less_than_x))
+
+
+def qsort_list(items):
+    if not items:
+        return []
+
+    head, tail = items[0], items[1:]
+
+    less_than_head, not_less_than_head = partition(lambda y: head > y, tail)
+
+    return qsort_list(list(less_than_head)) + \
+        [head] + \
+        qsort_list(list(not_less_than_head))
 
 
 import random
 
-for i in range(1000):
-    l = [random.randrange(-20, 20) for _ in range(50)]
-    assert list(qsort(l)) == list(sorted(l))
 
-print(list(qsort([9,8,7,6,5,4,3,2,1])))
+def test(qsort):
+    for i in range(1000):
+        l = [random.randrange(-20, 20) for _ in range(50)]
+        assert list(qsort(l)) == list(sorted(l))
+
+
+test(qsort_list)
+test(qsort_iter)
+
+print(list(qsort_iter([9,8,7,6,5,4,3,2,1])))
