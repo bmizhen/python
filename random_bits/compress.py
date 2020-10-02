@@ -17,4 +17,4 @@ def compress(query):
     return '&'.join(f'{k}={",".join(v)}' for k, v in mmap.items())
 
 
-print(compress('foo=1&foo=2&foo=3&blah=a&blah=b'))
+print(compress('foo=1&foo=2&foo=3&blah=a&blah=b&baz=&baz='))
