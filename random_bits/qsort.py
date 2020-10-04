@@ -4,7 +4,6 @@ def partition(p, it):
     items = list(it)
     return filter(p, items), filterfalse(p, items)
 
-
 def chain_iterables(*iterables):
     for it in iterables:
         yield from it
