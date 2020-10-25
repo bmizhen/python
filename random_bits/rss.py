@@ -1,7 +1,9 @@
-google_news_url="https://news.google.com/news/rss"
+import xml.etree.ElementTree as ElementTree
 
 import requests
-import xml.etree.ElementTree as ElementTree
+
+google_news_url = "https://news.google.com/news/rss"
+
 
 def get_headlines(rss_url):
     """
@@ -14,5 +16,5 @@ def get_headlines(rss_url):
 
     return [item.text for item in feed_tree.findall('.//channel/item/title')]
 
-print(get_headlines(google_news_url))
 
+print(get_headlines(google_news_url))

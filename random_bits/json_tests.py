@@ -141,7 +141,6 @@ def websocket_test_aiohttp(count, port):
     p.start()
 
     time.sleep(1)
-    import websockets
 
     now = time.time()
 

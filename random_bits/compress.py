@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def multymap(pairs):
     result = defaultdict(list)
     for k, v in pairs:
