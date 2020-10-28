@@ -76,8 +76,6 @@ class Calculator(object):
             if t == '(':
                 sub_exp, index = self.parse_parens(tokens, index)
                 expression.append(sub_exp)
-            elif t == ')':
-                break
             else:
                 expression.append(t)
                 index += 1
