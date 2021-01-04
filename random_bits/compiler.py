@@ -167,7 +167,7 @@ class Compiler(object):
 """
 import pprint
 
-pprint.pprint(Compiler().compile('[ x y z ] ( 2*3*x + 5*y - 3*z ) / (1 + 3 + 2*2)'))
+pprint.pprint(Compiler().compile('[ xx y z ] ( 2*3*x + 5*y - 3*z ) / (1 + 3 + 2*2)'))
 
 pprint.pprint(Compiler().compile('1'))
 print()
